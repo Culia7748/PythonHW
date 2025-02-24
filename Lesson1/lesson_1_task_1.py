@@ -1,1 +1,3 @@
-print ("hello, world!")
+my_name = "Juliya"
+print(my_name)
+
