@@ -12,7 +12,7 @@ def driver():
         "profile.password_manager_enabled": False
     })
     driver = webdriver.Chrome()
-    #(options=chrome_options)
+    #(options=chrome_options) для закрытия всплывающего окна (если появляется)
     driver.maximize_window()
     driver.implicitly_wait(20)
     yield driver

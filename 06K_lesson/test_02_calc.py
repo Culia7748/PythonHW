@@ -33,3 +33,4 @@ def test_calculator():
     print("Проверка пройдена: результат", result_text)
 
     chrom_browser.quit()
+
