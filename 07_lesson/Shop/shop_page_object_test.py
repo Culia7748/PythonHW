@@ -1,4 +1,3 @@
-from time import sleep
 import  pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -27,13 +26,9 @@ def test_shop(driver):
     authorization = AuthorizationPage(driver)
     authorization.authorization("standard_user", "secret_sauce")
 
-    sleep(5)
-
     main_shop_page = MainShopPage(driver)
     main_shop_page.add_product()
     main_shop_page.get_shopping_cart()
-
-    sleep(5)
 
     checkout_page = CheckoutPage(driver)
     checkout_page.checkout()
@@ -42,9 +37,6 @@ def test_shop(driver):
     information_form.information_form("Юлия", "Цыганкова", "413370")
     information_form.cont()
 
-    sleep(5)
-
     total = information_form.total_price()
-    #total = total_price.text.strip().replace("Total: $", "")
     expected_total = "58.29"
     assert total == expected_total

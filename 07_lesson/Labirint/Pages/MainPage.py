@@ -14,5 +14,5 @@ class MainPage:
 
     def search(self, term):
         # Найти все книги со словом Python
-        self._driver.find_element(By.CSS_SELECTOR, "#search-field").send_keys('python')
+        self._driver.find_element(By.CSS_SELECTOR, "#search-field").send_keys(term)
         self._driver.find_element(By.CSS_SELECTOR, "button[type=submit]").click()
