@@ -42,7 +42,6 @@ class YouGileApi:
         print(project_add_point)
         return resp
 
-
     def get_project_id(self, project_id):
         my_headers = {}
         my_headers["Authorization"] = "Bearer " + self.token
