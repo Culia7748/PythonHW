@@ -1,5 +1,4 @@
-from http.client import responses
-from time import sleep
+
 import pytest
 from  YouGileApi import YouGileApi
 
