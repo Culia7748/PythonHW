@@ -6,6 +6,8 @@ class SubjectTable:
         "select subjects": "select * from subject",
         "delete by subject_title": text("delete from subject where subject_title =:subject_title_to_delete"),
         "insert new subject": text("insert into subject(subject_id, subject_title) values (:new_id, :new_title)"),
+        "update subject":
+            text("update subject set subject_id =:new_subject_id where subject_title =:subject_title_to_update")
     }
 
     def __init__(self, connection_string):
@@ -20,3 +22,7 @@ class SubjectTable:
 
     def delete_subjects(self, title):
         self.db.execute(self.__scripts["delete by subject_title"], subject_title_to_delete=title)
+
+    def update_subject(self, subject_id, subject_title):
+        (self.db.execute
+         (self.__scripts["update subject"], new_subject_id=subject_id, subject_title_to_update=subject_title ))
